@@ -1,0 +1,311 @@
+.button_registration {
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    color: white;
+    font-size: 1.1rem;
+    letter-spacing: .05rem;
+    font-weight: 700;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    text-decoration: none;
+    background: #026a38;
+
+}
+
+.button_registration:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+}
+
+.button_registration:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    z-index: -2;
+}
+
+.button_registration:hover {
+    /*background: #ff3d00;*/
+    background: #027d42;
+    /*opacity: 80%;*/
+}
+.btn_create_card {
+    display: none;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: .05rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    text-decoration: none;
+    background: #d91717;
+    margin-left: 5px;
+}
+
+.btn_create_card:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+}
+
+.btn_create_card:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    z-index: -2;
+}
+
+.btn_create_card:hover {
+    /*background: #ff3d00;*/
+    background: #fa2424;
+    /*opacity: 80%;*/
+}
+
+
+#bg_signin {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+
+}
+
+.signin_module {
+    display: block;
+    margin: 90px auto;
+    position: relative;
+    height: 440px;
+    width: 450px;
+    background-color: white;
+    border: none;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.signin_title {
+    text-align: center;
+    margin: 15px auto;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input.create_input {
+    width: 100%;
+    padding: 7px;
+    margin: 2px 0 6px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 15px;
+}
+
+.registerbtn {
+    background-color: #1d1b26;
+    color: white;
+    padding: 16px 20px;
+    margin: auto 0;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn.creationcard {
+    margin-top: 0;
+}
+
+.registerbtn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+
+.create_new_password {
+    color: #0022ff;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.forget_password {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.create_new_password:hover {
+    color: rgba(0, 72, 255, 0.87);
+}
+
+#signin_close {
+    margin-top: 1px;
+    margin-right: 2px;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    color: red;
+    border: none;
+    background-color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#signin_close:hover {
+    color: rgba(255, 0, 0, 0.66);
+}
+
+@media (max-width: 800px) {
+
+    .signin_module {
+        width: 350px;
+        padding: 17px;
+    }
+}
+
+@media (max-width: 490px) {
+    .signin_module {
+        width: 270px;
+        padding: 17px;
+    }
+}
+
+#bg_reg {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+}
+
+#bg_cre {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+}
+
+.module {
+    display: block;
+    margin: 40px auto;
+    position: relative;
+    height: 535px;
+    width: 450px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.module.creationcard {
+    margin-top: 5px;
+    height: 620px;
+
+}
+
+.terms {
+    font-size: 10px;
+}
+
+#reg_close {
+    margin-top: 1px;
+    margin-right: 2px;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    color: red;
+    border: none;
+    background-color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#cre_close {
+    margin-top: 1px;
+    margin-right: 2px;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    color: red;
+    border: none;
+    background-color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+@media (max-width: 800px) {
+
+    .module.creationcard {
+        margin-top: 70px;
+    }
+}
+
+#reg_close:hover {
+    color: rgba(255, 0, 0, 0.66);
+}
+#cre_close:hover {
+    color: rgba(255, 0, 0, 0.66);
+}
+
+
+
+@media (max-width: 800px) {
+
+    .module {
+        width: 350px;
+        padding: 17px;
+        margin-top: 70px;
+    }
+
+}
+
+@media (max-width: 490px) {
+    .module {
+        width: 270px;
+        padding: 17px;
+    }
+}

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contacts.az</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/slider.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/category-box.css">
+        <link rel="stylesheet" href="css/register-signup-create.css">
+        <link rel="stylesheet" href="css/card.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    </head>
+    <body>
+        <nav>
+            <div class="menu-icon">
+                <span class="fas fa-bars"></span>
+            </div>
+            <div class="logo">
+                <a href="#" onclick="loadCharacters(); back()">Contacts.az</a>
+            </div>
+            <div class="searching">
+                <div class="search-icon">
+                    <span class="fas fa-search"></span>
+                </div>
+                <div class="cancel-icon">
+                    <span class="fas fa-times"></span>
+                </div>
+                <div class="searching">
+                    <form action="#">
+                        <input type="search" id="search" class="search-data" placeholder="Search" required>
+                        <button type='button' id="myBtn" class="fas fa-search" onclick="searchEmployee()"></button>
+                    </form>
+                </div>
+            </div>
+            <div class="nav-items">
+                <li class="li"><a href="#" id="signin_link" onclick="changeButton_old()">Sign in</a></li>
+                <a href="#" id="reg_link" class="button_registration" onclick="changeButton_old2()">Registration</a>
+                <li class="li"><a href="#" id="mycards" onclick="cardByUsername(); back()">My cards</a></li>
+                <a href="#" id="cre_link" class="btn_create_card" onclick="changeButton_old3()">Create a card</a>
+                <li class="li"><a href="#" id="logout_link" onclick="logout(); back()">Logout</a></li>
+
+            </div>
+        </nav>
+        <section class="signin_section">
+            <div id="bg_signin" hidden>
+                <div class="signin_module">
+                    <div class="signin_top">
+                        <input type="button" onclick="changeButton_new()" id=
+                                "signin_close" value="X">
+                        <form class="form">
+                            <h1 class="signin_title">Sign in</h1>
+                            <hr>
+
+                            <label for="email"><b>Email</b></label>
+                            <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+                            <input type="checkbox" value="lsRememberMe" id="rememberMe"> <label for="rememberMe">Remember
+                            me</label>
+                            <hr>
+
+                            <button type='button' class="registerbtn sign" id="signInBtn"
+                                    onclick="login() && changeButton_new() ">Sign in
+                            </button>
+                            <p class="forget_password">Forget your password? <a class="create_new_password" href="#">Create
+                                new password</a>.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="registration">
+            <div id="bg_reg" hidden>
+                <div class="module">
+                    <div class="reg_top">
+                        <input type="button" onclick="changeButton_new2()" id=
+                                "reg_close" value="X">
+                        <form class="form" role="form">
+                            <h1 class="signin_title">Registration</h1>
+                            <hr>
+
+                            <label for="email"><b>Email</b></label>
+                            <input type="text" id="email_id" placeholder="Enter Email" name="email" required>
+
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" id="password_id" placeholder="Enter Password" name="psw" required>
+
+                            <label for="psw"><b>Confirm Password</b></label>
+                            <input type="password" id="2password_id" placeholder="Confirm Password" name="psw" required>
+
+                            <hr>
+                            <label>
+                                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">
+                                Remember me
+                            </label>
+
+                            <p class="terms">By creating an account you agree to our <a href="#"
+                                                                                        style="color:dodgerblue">Terms &
+                                Privacy</a>.</p>
+
+                            <button type='button' class="registerbtn" id="registerBtn"
+                                    onclick="registration() &&changeButton_new2()">Sign
+                                up
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="creation">
+            <div id="bg_cre" hidden>
+                <div class="module creationcard">
+                    <div class="reg_top">
+                        <input type="button" onclick="changeButton_new3()" id=
+                                "cre_close" value="X">
+                        <form class="form" role="form">
+                            <h1 class="signin_title">Create a card</h1>
+                            <hr>
+
+                            <label><b>Category</b></label>
+                            <select class="categories" id="categories">
+                                <option value="Education">Education</option>
+                                <option value="Cleaning">Cleaning</option>
+                                <option value="Delivery">Delivery</option>
+                                <option value="Bakery">Bakery</option>
+                                <option value="Driving">Driving</option>
+                                <option value="HomeJobs">HomeJobs</option>
+                                <option value="Business">Business</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Sport">Sport</option>
+                                <option value="IT">IT</option>
+                            </select>
+
+                            <label><b>Firstname</b></label>
+                            <input class="create_input" type="text" id="firstname" placeholder="Enter Name" required>
+
+                            <label><b>Lastname</b></label>
+                            <input class="create_input" type="text" id="lastname" placeholder="Enter Lastname" required>
+
+                            <label><b>City</b></label>
+                            <input class="create_input" type="text" id="city" placeholder="Enter city" required>
+
+                            <label><b>Price</b></label>
+                            <input class="create_input" type="text" id="price" placeholder="Enter price" required>
+
+                            <label><b>Phone number</b></label>
+                            <input class="create_input" type="text" id="phone" placeholder="Enter phone number"
+                                   required>
+
+                            <label><b>Picture url</b></label>
+                            <input class="file-upload-input" id="picture_file" type="file"
+                                   accept="image/png, image/jpeg, image/jfif" required>
+
+                            <label><b>Enter about yourself</b></label>
+                            <input class="create_input" type="text" id="about" placeholder="Enter about yourself"
+                                   required>
+
+                            <button type='button' class="registerbtn creationcard" id="create_card_btn"
+                                    onclick="create()">Create
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="central_block">
+            <div class="slider">
+
+                <div class="item">
+                    <img src="images/slider/1.png">
+                </div>
+
+                <div class="item">
+                    <img src="images/slider/3.png">
+                </div>
+
+                <a class="previous" onclick="previousSlide()">&#10094;</a>
+                <a class="next" onclick="nextSlide()">&#10095;</a>
+            </div>
+
+        </section>
+        <div class="box" id="box">
+            <h2>CATEGORY</h2>
+            <ul>
+                <li onclick="searchByCategory1(); back();scrollToTop();"><span>1</span>Education</li>
+                <li onclick="searchByCategory2(); back();scrollToTop();"><span>2</span>Cleaning</li>
+                <li onclick="searchByCategory3(); back();scrollToTop();"><span>3</span>Delivery</li>
+                <li onclick="searchByCategory4(); back();scrollToTop();"><span>4</span>Bakery</li>
+                <li onclick="searchByCategory5(); back();scrollToTop();"><span>5</span>Driving</li>
+                <li onclick="searchByCategory6(); back();scrollToTop();"><span>6</span>HomeJobs</li>
+                <li onclick="searchByCategory7(); back();scrollToTop();"><span>7</span>Business</li>
+                <li onclick="searchByCategory8(); back();scrollToTop();"><span>8</span>Marketing</li>
+                <li onclick="searchByCategory9(); back();scrollToTop();"><span>9</span>Sport</li>
+                <li onclick="searchByCategory10(); back();scrollToTop();"><span>10</span>IT</li>
+            </ul>
+        </div>
+
+        <div class="container-menu" id="charactersList">
+        </div>
+
+        <div class="card-container" id="card-container" style="display: none">
+
+        </div>
+
+
+        <footer class="footer-distributed">
+
+            <div class="footer-left">
+
+                <h3>Contacts.<span>az</span></h3>
+
+                <p class="footer-links">
+                    <a href="#" class="link-1">Home</a>
+
+                    <a href="#">Blog</a>
+
+                    <a href="#">Pricing</a>
+
+                    <a href="#">About</a>
+
+                    <a href="#">Faq</a>
+
+                    <a href="#">Contact</a>
+                </p>
+
+                <p class="footer-company-name">Contacts.az © 2021</p>
+            </div>
+
+            <div class="footer-center">
+
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p> Baku/Azerbaijan</p>
+                </div>
+
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+994-51-653-33-65</p>
+                </div>
+
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:support@company.com">contactsaz@company.com</a></p>
+                </div>
+
+            </div>
+
+            <div class="footer-right">
+
+                <p class="footer-company-about">
+                    <span>About the company</span>
+                    Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu
+                    auctor lacus vehicula sit amet.
+                </p>
+
+                <div class="footer-icons">
+
+                    <a href="#"><img src="images/logo/fb_icon.png" width="35"
+                                     height=35 alt="ops..."></a>
+                    <a href="#"><img src="images/logo/inst_logo.jpg" width="35"
+                                     height=35 alt="ops..."></a>
+                    <a href="#"><img src="images/logo/yb_logo.png" width="35"
+                                     height=35 alt="ops..."></a>
+
+                    <a href="https://t.me/shamil_my_bot"><img src="images/logo/tgg.png" width="35"
+                                     height=35 alt="ops..."></a>
+
+                </div>
+
+            </div>
+
+        </footer>
+        <script src="js/script.js"></script>
+        <script src="js/sign.js"></script>
+        <script src="js/search.js"></script>
+        <script src="js/navbar.js"></script>
+        <script src="js/category.js"></script>
+        <script src="js/crud.js"></script>
+        <script src="js/slider.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
